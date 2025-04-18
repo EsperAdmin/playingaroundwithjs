@@ -1,3 +1,9 @@
+// Take in an array.
+// For every even number, it will triple it.
+// Then it will sum all those even numbers.
+const array = [1, 2, 3, 4, 5]
+sumOfTripledEvens(array)
+
 function sumOfTripledEvens(array) {
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
@@ -10,6 +16,16 @@ function sumOfTripledEvens(array) {
         sum += tripleEvenNumber;
       }
     }
-    return sum;
+    console.log(`Default Function = ${sum}`);
   }
   
+
+sumOfTripledEvens2(array)
+function sumOfTripledEvens2(array) {
+const filt = array.filter((num) => num % 2 === 0);
+const mp = filt.map((num) => num * 3);
+const sum = mp.reduce((total, currentItem) => {
+    return total + currentItem;
+}, 0);
+console.log(`Redone function = ${sum}`);
+}
